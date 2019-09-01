@@ -1,0 +1,243 @@
+.main-carousel {
+    height: 100vh;
+}
+
+.indicators li {
+    background-color: darkgray !important;
+}
+
+.full-height {
+    height: 100vh !important;
+}
+
+.main-title {
+    font-family: 'Major Mono Display', monospace;
+    margin-top: 30%;
+    color: orange;
+}
+
+.footer-line {
+    font-family: 'Major Mono Display', monospace;
+    margin-top: 200px;
+    color: rgb(94, 93, 99);
+}
+
+.footer-line span {
+    color: rgb(10, 74, 77);
+    font-weight: bold;
+}
+
+.fa-caret-square-down {
+    font-size: 11px !important;
+}
+
+.config-form {
+    font-family: 'Montserrat' !important;
+}
+
+.input-field input+label {
+    color: white !important;
+    font-family: 'Montserrat' !important;
+}
+
+.input-field input {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+    color: white;
+    font-size: 14px;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid lightgreen !important;
+    box-shadow: 0 1px 0 0 lightgreen !important;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.config-form {
+    width: 80% !important;
+    margin: 250px auto;
+    padding-left: 20% !important;
+}
+
+.logo-main{
+    position: absolute;
+    font-size: 100px;
+    margin-top: 140px;
+    color: orange;
+}
+
+#toast-container {
+    top: 6%;
+    right: 3%;
+    bottom: auto !important;
+    left: auto !important;
+}
+
+.red-toast {
+    background: #e53935;
+}
+
+.green-toast {
+    background-color: #00c853;
+}
+
+.brand-logo-title {
+    font-family: 'Major Mono Display', monospace;
+    padding-left: 20px !important;
+    font-size: 25px !important;
+}
+
+.dropdown-trigger {
+    font-family: 'Montserrat' !important;
+}
+
+.dropdown-content li a {
+    color: grey;
+    font-family: 'Montserrat' !important;
+}
+
+.dropdown-content li a i {
+    color: #2196F3;
+}
+
+.dropdown-content li:nth-child(9) a i {
+    /* color: #c62828 !important; */
+    color: #81c628 !important;
+}
+
+#uploadJsonModal, #uploadJobsListModal, #mergeProjectsModal {
+    font-family: 'Montserrat';
+}
+
+#uploadJsonModal .file-field, #uploadJobsListModal .file-field, #mergeProjectsModal .file-field {
+    width: 70%;
+    margin: 100px auto;
+}
+
+#uploadJsonModal .file-path-wrapper .file-path, #uploadJobsListModal .file-path-wrapper .file-path, #mergeProjectsModal .file-path-wrapper .file-path {
+    border-bottom: 1px solid grey !important;
+    color: grey;
+}
+
+#uploadJsonModal .modal-footer a:first-child, #uploadJobsListModal .modal-footer a:first-child, #mergeProjectsModal .modal-footer a:first-child {
+    color: white !important;
+}
+
+#myDiagramDiv {
+    height: calc(100vh - 67px) !important;
+    width: 100vw;
+    -webkit-tap-highlight-color: white !important;
+    cursor: -webkit-grab !important;
+}
+
+.playground-wrapper {
+    padding: 0px !important;
+}
+
+#myInspector {
+    font-size: 12px;
+    position: absolute;
+    top: 64px;
+    z-index: 9999999 !important;
+    color:#2196F3 !important;
+    background: white !important;
+    left: calc((100vw - 717px)/2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+#myInspector table tr:nth-child(1), #myInspector table tr:nth-child(2), #myInspector table tr:nth-child(6) {
+    display: none !important;
+}
+
+#myInspector table tr td:first-child {
+    text-transform: capitalize;
+}
+
+#myInspector table tr td input {
+    font-size: 12px;
+    color: grey !important;
+    margin-left: 10px;
+}
+
+#myInspector table tr td input:focus {
+    border-bottom: 1px solid #2196F3 !important;
+    box-shadow: 0 1px 0 0 #2196F3 !important;
+}
+
+#myInspector table tbody tr {
+    display: inline-block !important;
+    border-bottom: none !important;
+    margin-right: 30px;
+}
+
+.workflow_name_wrapper {
+    height: 64px !important;
+    margin-bottom: 0px !important;
+}
+
+.workflow_name_wrapper div {
+    height: 64px !important;
+    font-family: 'Montserrat';
+}
+
+.workflow_name {
+    color: white !important;
+    border-bottom: 1px solid white !important;
+    font-family: 'Montserrat';
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed !important;
+}
+
+.rename-end-job {
+    height: 64px !important;
+    margin-bottom: 0px !important;
+    margin-right: 10px !important;
+}
+
+.rename-end-job span{
+    color: white !important;
+    font-family: 'Montserrat' !important;
+    font-weight: normal !important;
+    font-size: 15px !important;
+}
+
+.rename-end-job [type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid white !important;
+    border-bottom: 2px solid white !important;
+}
+
+.smartDesignCheckboxWrapper [type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #2196F3 !important;
+    border-bottom: 2px solid #2196F3 !important;
+}
+
+/* label color */
+#mergeProjectsModal .input-field label {
+    color: #000 !important;
+}
+/* label focus color */
+#mergeProjectsModal .input-field input[type=text]:focus + label {
+    color: #2196F3 !important;
+}
+
+#mergeProjectsModal .input-field input[type=text] {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: 0 1px 0 0 #000 !important;
+    color: black !important;
+}
+
+/* label underline focus color */
+#mergeProjectsModal .input-field input[type=text]:focus {
+    border-bottom: 1px solid #2196F3 !important;
+    box-shadow: 0 1px 0 0 #2196F3 !important;
+    color: black !important;
+}
+

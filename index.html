@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Azkaban WorkFlow Designer</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/DataInspector.css">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|Montserrat|Mukta" rel="stylesheet">
+    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+
+<body onload="init()">
+    <div class="carousel carousel-slider main-carousel">
+        <div class="carousel-item" href="#one!">
+            <div class="row">
+                <div class="col l8 center">
+                    <h3><i class="fas fa-drafting-compass logo-main"></i></h3>
+                    <h3 class="main-title">
+                        Azkaban Workflow Designer
+                    </h3>
+                    <p class="footer-line">v2 | built by <span>suraj potnuru</span></p>
+                </div>
+                <div class="col l4 blue full-height">
+                    <div class="row">
+                        <form class="col s12 config-form">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="enter client name as used in revo" id="client_name" type="text"
+                                        class="validate">
+                                    <label for="client_name">Client Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="enter project name as used in revo" id="project_name"
+                                        type="text" class="validate">
+                                    <label for="project_name">Project Name</label>
+                                </div>
+                            </div>
+                            <!-- <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Enter Azkaban Username" id="azkaban_username" type="text"
+                                        class="validate">
+                                    <label for="project_name">Azkaban User Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Enter Azkaban Password" id="azkaban_password" type="password"
+                                        class="validate">
+                                    <label for="project_name">Azkaban Password</label>
+                                </div>
+                            </div> -->
+                            <div class="row center">
+                                <a class="btn-floating btn-large waves-effect waves-light green"
+                                    title="Save config and proceed to designer" onclick="saveConfigDetails()"><i
+                                        class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" href="#two!">
+            <ul id="optionsDropdown" class="dropdown-content">
+                <li><a href="javascript:editConfig()" title="edit designer configuration"><i
+                            class="fas fa-edit"></i>Edit
+                        Designer Config</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:layout()" title="auto arrange"><i class="fas fa-th"></i>Auto Arrange</a></li>
+                <li><a href="javascript:save()" title="download workflow as json"><i
+                            class="fas fa-file-download"></i>Download
+                        Workflow</a></li>
+                <li onclick="openUploadJsonModal()"><a title="upload json as config"><i
+                            class="fas fa-file-upload"></i>Upload
+                        Workflow</a></li>
+                <li onclick="openUploadJobsListModal()"><a title="upload text file containing revo jobs list"><i
+                            class="fas fa-clipboard-list"></i>Upload Jobs List</a></li>
+                <li onclick="openMergeProjectsModel()"><a title="merge multiple azkabans into one project"><i
+                            class="fas fa-code-branch"></i>Merge Projects</a></li>
+                <li class="divider"></li>
+                <li><a href="javascript:createAzkabanProject()" title="deploy worflow to azkaban"
+                        class="deployButton2"><i class="fas fa-file-archive"></i>Create Zip File
+                    </a></li>
+                <!-- <li class="divider"></li> -->
+                <!-- <li><a href="javascript:addStartJob()" title="auto arrange"><i class="fas fa-circle"></i>Add Start Job to Designer</a></li> -->
+                <!-- <li><a href="javascript:addEndJob()" title="auto arrange"><i class="fas fa-dot-circle"></i>Add End Job to Designer</a></li> -->
+            </ul>
+            <nav class="blue">
+                <div class="nav-wrapper">
+                    <a href="javascript:void(0)" class="brand-logo brand-logo-title"><i
+                            class="fas fa-drafting-compass"></i></a>
+                    <ul class="right hide-on-med-and-down control-buttons">
+                        <!-- <li><a href="javascript:addEmptyNode()">test</a></li> -->
+                        <li>
+                            <div class="row workflow_name_wrapper">
+                                <div class="col l5">
+                                    <span>
+                                        Workflow Name
+                                    </span>
+                                </div>
+                                <div class="col l7">
+                                    <input type="text" placeholder="workflow name" class="workflow_name">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row rename-end-job">
+                                <label for="rename_end_job_checkbox">
+                                    <input type="checkbox" id="rename_end_job_checkbox" />
+                                    <span for="rename_end_job_checkbox">Rename EndJob</span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dropdown-trigger" href="#!" data-target="optionsDropdown">
+                                <span>Options&nbsp;</span>
+                                <i class="fas fa-caret-square-down"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col l12">
+                    <div id="myInspector"></div>
+                </div>
+                <div class="col l12 playground-wrapper">
+                    <div id="myDiagramDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="uploadJsonModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="center">Upload JSON file as workflow</h4>
+            <div class="file-field input-field">
+                <div class="btn blue">
+                    <span>Browse</span>
+                    <input type="file" id="inputFile">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:load('file')" class="waves-effect btn-flat blue">Upload</a>
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat">Close</a>
+        </div>
+    </div>
+    <div id="uploadJobsListModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="center">Upload jobs to designer</h4>
+            <div class="file-field input-field">
+                <div class="btn blue">
+                    <span>Browse</span>
+                    <input type="file" id="inputFile2">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">
+                </div>
+            </div>
+            <div class="row center smartDesignCheckboxWrapper">
+                <label>
+                    <input type="checkbox" checked="checked" id="smartDesignCheckbox" />
+                    <span for="smartDesignCheckbox">Enable Smart Design</span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:loadJobsList()" class="waves-effect btn-flat blue">Upload to Designer</a>
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat">Close</a>
+        </div>
+    </div>
+    <div id="mergeProjectsModal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4 class="center">Merge Projects</h4>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Enter name of merged project name" id="merged_project_name" type="text" class="validate">
+                    <label for="first_name">Merged Project Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input placeholder="Enter list of source projects to merge" id="source_projects_list" type="text" class="validate">
+                    <label for="first_name">Source Projects List</label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a href="javascript:mergeProjects()" class="waves-effect btn-flat blue">Merge</a>
+            <a href="#!" class="modal-close waves-effect waves-red btn-flat">Close</a>
+        </div>
+    </div>
+    <script src="assets/js/go.js"></script>
+    <script src="assets/js/DataInspector.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/materialize-css/dist/js/materialize.js"></script>
+    <script src="node_modules/file-saver/dist/FileSaver.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html

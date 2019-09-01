@@ -1,0 +1,8 @@
+node_modules
+package-lock.json
+*job
+*zip
+
+src/css/custom-old.css
+src/js/main-old.js
+index-old.html

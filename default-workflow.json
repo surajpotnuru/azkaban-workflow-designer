@@ -1,0 +1,112 @@
+{
+    "class": "go.GraphLinksModel",
+    "nodeDataArray": [
+        {
+            "key": 1,
+            "text": "StartJob",
+            "category": "Start",
+            "type": "noop",
+            "loc": "0 44.50000000000001"
+        },
+        {
+            "key": 2,
+            "text": "ldg_samples",
+            "category": "revo",
+            "type": "datatransfer",
+            "loc": "183 0"
+        },
+        {
+            "key": 999,
+            "text": "EndJob",
+            "category": "End",
+            "type": "noop",
+            "loc": "1235 44.5"
+        },
+        {
+            "text": "ldg_samples",
+            "category": "revo",
+            "type": "landing",
+            "loc": "446 0",
+            "key": -4
+        },
+        {
+            "text": "ldg_calls",
+            "category": "revo",
+            "type": "datatransfer",
+            "loc": "183 65",
+            "key": -6
+        },
+        {
+            "text": "ldg_calls",
+            "category": "revo",
+            "type": "landing",
+            "loc": "446 65",
+            "key": -7
+        },
+        {
+            "text": "wf_stg_1",
+            "category": "revo",
+            "type": "bre",
+            "loc": "971.9999999999995 2.842170943040401e-14",
+            "key": -8
+        },
+        {
+            "text": "Merge1",
+            "category": "Merge",
+            "type": "noop",
+            "loc": "708.9999999999997 29.999999999999964",
+            "key": -10,
+            "comments": "undefined"
+        },
+        {
+            "text": "wf_stg2",
+            "category": "revo",
+            "type": "bre",
+            "loc": "972 65",
+            "key": -9,
+            "comments": "undefined"
+        }
+    ],
+    "linkDataArray": [
+        {
+            "from": 1,
+            "to": 2
+        },
+        {
+            "from": 2,
+            "to": -4
+        },
+        {
+            "from": 1,
+            "to": -6
+        },
+        {
+            "from": -6,
+            "to": -7
+        },
+        {
+            "from": -7,
+            "to": -10
+        },
+        {
+            "from": -4,
+            "to": -10
+        },
+        {
+            "from": -10,
+            "to": -8
+        },
+        {
+            "from": -10,
+            "to": -9
+        },
+        {
+            "from": -8,
+            "to": 999
+        },
+        {
+            "from": -9,
+            "to": 999
+        }
+    ]
+}
