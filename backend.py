@@ -132,6 +132,16 @@ def submit():
                     status=200,
                     mimetype='application/json'
                 )
+            else:
+                responseData = {
+                    "status": "success",
+                    "message": "Duplicate Nodes are present"
+                }
+                return flask.Response(
+                    response=json.dumps(responseData),
+                    status=200,
+                    mimetype='application/json'
+                )
         except Exception as exp:
             data = {
                 "status": "error",
@@ -170,7 +180,7 @@ def mergeProjects():
                 shutil.rmtree(cwd + "\\" + mergedProjectName)
                 shutil.rmtree(cwd + "\\" + "temp_data")
             except Exception as exp:
-                print(exp)
+                print("Error at line 183" + str(exp))
             os.makedirs(cwd + "\\" + mergedProjectName)
             for project in sourceProjectsList:
                 src =  cwd + "\\" + project

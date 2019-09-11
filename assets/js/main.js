@@ -23,16 +23,16 @@ document.addEventListener('DOMContentLoaded', function () {
     //     $("#azkaban_password").val(localStorage.getItem("azkabanPassword"))
     // }
 });
-$(document).keydown(function (e) {
-    if (e.keyCode == 39) {
-        $('.main-carousel').carousel('next')
-        DEBUG && console.log("Right Arrow Pressed")
-    }
-    if (e.keyCode == 37) {
-        $('.main-carousel').carousel('prev')
-        DEBUG && console.log("Left Arrow Pressed")
-    }
-});
+// $(document).keydown(function (e) {
+//     if (e.keyCode == 39) {
+//         $('.main-carousel').carousel('next')
+//         DEBUG && console.log("Right Arrow Pressed")
+//     }
+//     if (e.keyCode == 37) {
+//         $('.main-carousel').carousel('prev')
+//         DEBUG && console.log("Left Arrow Pressed")
+//     }
+// });
 function saveConfigDetails() {
     var clientName = $("#client_name").val()
     var projectName = $("#project_name").val()
