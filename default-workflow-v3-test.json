@@ -1,0 +1,18 @@
+{ "class": "go.GraphLinksModel",
+  "nodeDataArray": [ 
+{"key":1, "text":"StartJob", "category":"Start", "type":"noop", "loc":"76.24872843665403 0"},
+{"key":2, "text":"ldg_call_atvy", "category":"revo", "type":"datatransfer", "loc":"36.248728436654005 98", "comments":""},
+{"key":999, "text":"EndJob", "category":"End", "type":"noop", "loc":"76.248728436654 713"},
+{"text":"calls_brm_executor", "category":"spark", "type":"BRMQueryExecutor.py CALLS_BRM", "loc":"0.1171875 344", "key":-9, "comments":"undefined"},
+{"key":-7, "text":"ldg_call_atvy", "category":"revo", "type":"landing", "loc":"36.248728436654005 221", "comments":""},
+{"text":"trigger_next_batch", "category":"shell", "type":"TriggerNextBatch.sh param1 param2", "key":-6, "loc":"0 467", "comments":"undefined"},
+{"text":"sample_python", "category":"python", "type":"abc.py param 1 param2", "loc":"36.248728436654005 590", "key":-8, "comments":"undefined"}
+ ],
+  "linkDataArray": [ 
+{"from":1, "to":2},
+{"from":2, "to":-7},
+{"from":-7, "to":-9},
+{"from":-9, "to":-6},
+{"from":-6, "to":-8},
+{"from":-8, "to":999}
+ ]}

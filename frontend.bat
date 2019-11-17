@@ -1,4 +1,5 @@
 @echo off
+title awd_frontend
 rem INSTALL.bat - Package Install for Windows
 
 rem 1) test if python.exe is in the path:

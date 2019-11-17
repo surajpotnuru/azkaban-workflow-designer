@@ -320,7 +320,8 @@ function init() {
     });
     myDiagram.linkTemplate =
         $$(go.Link,
-            { selectionAdorned: false, fromPortId: "from", toPortId: "to", relinkableTo: true },
+            { curve: go.Link.Bezier,  adjusting: go.Link.Stretch,
+                reshapable: true, relinkableFrom: true, fromPortId: "from", toPortId: "to", relinkableTo: true },
             $$(go.Shape,
                 { stroke: "gray", strokeWidth: 2 },
                 {
